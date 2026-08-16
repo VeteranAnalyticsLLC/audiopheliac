@@ -144,12 +144,12 @@ export default defineConfig(({ command }) => {
       authPopupPlugin(),
       grokPwaPlugin(),
       tailwindcss(),
-      tanstackStart(),
-      ...(command === "build"
+      tanstackStart(pages ? { spa: { enabled: true } } : {}),
+      ...(command === "build" && !pages
         ? [
             nitro({
-              preset: pages ? "github-pages" : "vercel",
-              serverDir: pages ? false : "./server",
+              preset: "vercel",
+              serverDir: "./server",
             }),
           ]
         : []),
