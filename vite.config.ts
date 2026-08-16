@@ -129,7 +129,7 @@ function authPopupPlugin(): Plugin {
 export default defineConfig(({ command }) => {
   const pages =
     process.env.GITHUB_PAGES === "1" || process.env.NITRO_PRESET === "github_pages";
-  const base = pages ? "/audiopheliac/" : "/";
+  const base = pages ? "./" : "/";
 
   return {
     server: {

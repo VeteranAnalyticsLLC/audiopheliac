@@ -8,6 +8,7 @@ export const BRAND = {
   product: "Kit",
   tagline: "Where every cable, waveform, and decibel earns its keep.",
   domain: "theaudiopheliac.com",
+  shareUrl: "https://raw.githack.com/VeteranAnalyticsLLC/audiopheliac/main/docs/index.html",
   piano: "Casio Privia PX-870WE",
   ink: "#0A0A0B",
   paper: "#F5F5F7",

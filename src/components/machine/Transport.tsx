@@ -1,4 +1,4 @@
-import { Circle, Disc3, Pause, Play, Square } from "lucide-react";
+import { Circle, Disc3, Pause, Play, Share2, Square } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -64,6 +64,25 @@ export function Transport({
     else toast.error(midi.lastError ?? "MIDI blocked.");
   }
 
+  async function shareKit() {
+    const url = BRAND.shareUrl;
+    const text = `${BRAND.name} Kit — turn a Privia into a drum machine`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: BRAND.name, text, url });
+        return;
+      }
+    } catch {
+      /* fall through to copy */
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success("Link copied — paste it in a text");
+    } catch {
+      toast.message(url);
+    }
+  }
+
   return (
     <header className="flex flex-col gap-3 border-b border-border px-4 py-3 md:px-6">
       <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-5">
@@ -110,6 +129,14 @@ export function Transport({
               aria-label={recording ? "Stop recording" : "Record"}
             >
               {recording ? <Disc3 /> : <Circle className="size-3.5 fill-current" />}
+            </Button>
+            <Button
+              variant="panel"
+              size="icon"
+              onClick={() => void shareKit()}
+              aria-label="Share kit"
+            >
+              <Share2 className="size-3.5" />
             </Button>
           </div>
         </div>
@@ -231,6 +258,14 @@ export function Transport({
               aria-label={recording ? "Stop recording" : "Record"}
             >
               {recording ? <Disc3 /> : <Circle className="size-3.5 fill-current" />}
+            </Button>
+            <Button
+              variant="panel"
+              size="icon"
+              onClick={() => void shareKit()}
+              aria-label="Share kit"
+            >
+              <Share2 className="size-3.5" />
             </Button>
           </div>
         </div>

@@ -2,9 +2,11 @@
 
 Turn a Casio Privia PX-870 into a drum machine. Pads, sequencer, USB-MIDI, WAV and GM MIDI for Ableton, Audacity, and Suno.
 
-**Open it:** [https://veterananalyticsllc.github.io/audiopheliac/](https://veterananalyticsllc.github.io/audiopheliac/)
+**Text this:** [https://raw.githack.com/VeteranAnalyticsLLC/audiopheliac/main/docs/index.html](https://raw.githack.com/VeteranAnalyticsLLC/audiopheliac/main/docs/index.html)
 
-Text that link. Chrome or Edge. Plug the Privia USB-B (USB to Host). Slide piano volume to 0 so only the kit sings. Hit **Play beat**.
+Repo: [VeteranAnalyticsLLC/audiopheliac](https://github.com/VeteranAnalyticsLLC/audiopheliac)
+
+Chrome or Edge. Plug the Privia USB-B (USB to Host). Slide piano volume to 0. Hit **Play beat**.
 
 ## Modes
 
